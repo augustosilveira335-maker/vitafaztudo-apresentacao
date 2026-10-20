@@ -77,8 +77,9 @@
       const full = document.documentElement.scrollHeight - innerHeight;
       document.querySelector('.reading-progress i').style.transform = `scaleX(${clamp(scrollY / Math.max(1, full))})`;
       const hp = clamp(-hero.top / Math.max(1, hero.height));
-      document.querySelector('.building-photo').style.transform = `translateY(${hp * 90}px)`;
-      document.querySelector('.window-shade').style.opacity = .92 * (1 - clamp(hp / .25));
+      const building = document.querySelector('.building-photo'), shade = document.querySelector('.window-shade');
+      if (building) building.style.transform = `translateY(${hp * 90}px)`;
+      if (shade) shade.style.opacity = .92 * (1 - clamp(hp / .25));
       const proof = document.querySelector('.tenant-proof');
       const pp = clamp((innerHeight * .9 - proof.getBoundingClientRect().top) / (innerHeight * .65));
       proof.querySelector('.wipe-after').style.clipPath = `inset(0 ${(1 - pp) * 100}% 0 0)`;
@@ -184,4 +185,58 @@
   addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(configure, 150); }, { passive: true });
   reduced.addEventListener('change', configure);
   configure();
+})();
+
+// V5 (20/10/2026): números reais da capa contando e cena do link para inquilinos.
+(() => {
+  'use strict';
+  const canAnimate = !matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window;
+  const counters = [...document.querySelectorAll('.cover [data-count]')];
+  if (canAnimate && counters.length) {
+    counters.forEach(el => { el.textContent = '0'; });
+    let start = 0;
+    const tick = now => {
+      if (!start) start = now;
+      const p = Math.min(1, (now - start) / 1700), eased = 1 - Math.pow(1 - p, 3);
+      counters.forEach(el => { el.textContent = String(Math.round(Number(el.dataset.count) * eased)); });
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    setTimeout(() => requestAnimationFrame(tick), 350);
+  }
+
+  // Sem animação, a cena fica no estado final que já vem no HTML.
+  const stage = document.querySelector('.intake-stage');
+  if (!stage || !canAnimate) return;
+  const typed = stage.querySelector('.typed');
+  const text = typed.dataset.text;
+  const beats = [...document.querySelectorAll('.intake-beats li')];
+  const replay = document.querySelector('.intake-replay');
+  const phases = ['typing', 'scrolled', 'pressed', 'sent', 'notified'];
+  let timers = [], played = false;
+  const beat = n => beats.forEach((li, i) => li.classList.toggle('on', i <= n));
+  const reset = () => {
+    timers.forEach(clearTimeout); timers = [];
+    stage.classList.remove(...phases);
+    typed.textContent = '';
+    beat(0);
+  };
+  const run = () => {
+    reset(); played = true;
+    const at = (ms, fn) => timers.push(setTimeout(fn, ms));
+    at(400, () => stage.classList.add('typing'));
+    [...text].forEach((_, i) => at(650 + i * 48, () => { typed.textContent = text.slice(0, i + 1); }));
+    const typedAt = 650 + text.length * 48;
+    at(typedAt + 400, () => { stage.classList.remove('typing'); stage.classList.add('scrolled'); });
+    at(typedAt + 1500, () => stage.classList.add('pressed'));
+    at(typedAt + 1800, () => { stage.classList.remove('pressed'); stage.classList.add('sent'); beat(1); });
+    at(typedAt + 3000, () => { stage.classList.add('notified'); beat(2); });
+  };
+  replay.hidden = false;
+  replay.addEventListener('click', run);
+  reset();
+  new IntersectionObserver(entries => entries.forEach(entry => {
+    if (entry.isIntersecting && !played) run();
+    // Ao voltar para cima da cena, ela se prepara para tocar de novo.
+    if (!entry.isIntersecting && entry.boundingClientRect.top > 0 && played) { played = false; reset(); }
+  }), { threshold: .4 }).observe(stage);
 })();
