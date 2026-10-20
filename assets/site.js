@@ -61,7 +61,7 @@
     raf = 0;
     const hero = sections[0].getBoundingClientRect();
     root.classList.toggle('past-hero', hero.bottom <= topInset());
-    root.classList.toggle('at-contact', sections[6].getBoundingClientRect().top < innerHeight * .6);
+    root.classList.toggle('at-contact', sections[sections.length - 1].getBoundingClientRect().top < innerHeight * .6);
     let current = 0;
     sections.forEach((section, i) => {
       if (section.getBoundingClientRect().top <= innerHeight * .42) current = i;

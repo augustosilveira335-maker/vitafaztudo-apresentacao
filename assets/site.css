@@ -53,3 +53,35 @@
 /* Grão estático, um único mosaico pequeno. */
 body::after{content:'';position:fixed;inset:0;z-index:45;pointer-events:none;opacity:.023;background-image:url(data:image/png;base64,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)}
 @media(min-width:768px) and (max-width:1023px){.window-label{left:52%;width:170px;white-space:normal}.window-label i{flex-shrink:0}}
+
+/* Link para inquilinos e imobiliárias que já usam (20/10/2026). */
+.link-steps{list-style:none;padding:0;margin:0;display:grid;gap:44px}
+.link-step{display:flex;flex-direction:column;gap:10px;min-width:0}
+.link-num{color:var(--cyan)}
+.link-step h3{font-size:clamp(25px,2.6vw,34px)}
+.link-step>p{color:#c4d0d8;max-width:420px}
+.link-card{margin-top:12px;flex:1;display:flex;flex-direction:column;gap:12px;background:#f4f7f9;border:5px solid #28343e;border-radius:12px;padding:20px;box-shadow:0 22px 40px #0003;min-height:262px}
+.link-card .app-overline{display:block}
+.link-qr{display:flex;align-items:center;gap:14px}
+.link-qr svg{width:96px;height:96px;flex-shrink:0;background:#fff;padding:7px;border:1px solid #cfdbe2;border-radius:4px;fill:#17232d}
+.link-qr b{font-size:14px}
+.link-qr p{margin-top:4px}
+.link-url{font:500 12px/1.4 ui-monospace,Menlo,Consolas,monospace;word-break:break-all;background:#e2e8ed;padding:9px 11px;border-radius:4px}
+.link-field{display:grid;gap:4px}
+.link-field small{font-size:11px;color:#526572}
+.link-field span{background:#fff;border:1px solid #cfdbe2;border-radius:4px;padding:9px 11px;font-size:13px}
+.link-note{display:flex;gap:11px;align-items:flex-start;margin-top:auto;padding:12px 13px;background:#e3f3f7;border-left:4px solid var(--teal);border-radius:6px}
+.link-note i{width:9px;height:9px;margin-top:6px;border-radius:50%;background:var(--orange);flex-shrink:0}
+.link-note b{font-size:13px}
+.link-note p{margin-top:3px}
+.link-card .app-button,.link-card .app-status{align-self:flex-start}
+.link-example{margin-top:30px;color:var(--muted)}
+.clients h2>em{display:block}
+.client-logos{list-style:none;padding:0;margin:46px 0 0;display:grid;gap:18px}
+.client-logo{display:flex;flex-direction:column;gap:12px;min-width:0}
+.client-logo figure{margin:0;display:flex;align-items:center;justify-content:center;height:150px;padding:24px 30px;background:#f4f7f9;border-radius:10px}
+.client-logo img{width:auto;height:auto;max-width:100%;max-height:100%;object-fit:contain}
+.client-logo .label{color:var(--muted)}
+.clients-note{margin-top:38px;font-size:var(--body);color:var(--muted)}
+@media(min-width:768px){.link-steps{grid-template-columns:repeat(3,1fr);gap:30px}.link-card{padding:22px}.client-logos{grid-template-columns:repeat(3,1fr);gap:26px}.client-logo figure{height:190px}}
+@media(min-width:1024px){.link-steps{gap:42px}.client-logos{gap:34px}}
