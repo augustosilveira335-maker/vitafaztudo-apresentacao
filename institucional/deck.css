@@ -5,8 +5,8 @@ body{font-family:Montserrat,Arial,sans-serif;-webkit-font-smoothing:antialiased;
 h1,h2,h3,p,ul,ol,figure{margin:0}
 ul,ol{padding:0;list-style:none}
 img{display:block;max-width:100%}
-.deck{position:fixed;inset:0;display:grid;place-items:center;cursor:pointer}
-.palco{position:relative;width:1920px;height:1080px;flex:none;transform:scale(var(--s,.5));transform-origin:center;overflow:hidden;background:var(--fundo,#fff)}
+.deck{position:fixed;inset:0;overflow:hidden;cursor:pointer}
+.palco{position:absolute;left:50%;top:50%;width:1920px;height:1080px;transform:translate(-50%,-50%) scale(var(--s,.5));transform-origin:center;overflow:hidden;background:var(--fundo,#fff)}
 .slide{position:absolute;inset:0;overflow:hidden;opacity:0;visibility:hidden;transition:opacity .5s ease,visibility .5s}
 .slide.on{opacity:1;visibility:visible}
 .slide [data-in]{opacity:0;transform:translateY(28px);transition:opacity .6s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1)}
@@ -31,7 +31,7 @@ video{background:#000}
   @page{size:1920px 1080px;margin:0}
   html,body{height:auto;overflow:visible;background:#fff}
   .deck{position:static;display:block}
-  .palco{transform:none;width:1920px;height:auto;overflow:visible}
+  .palco{position:static;transform:none;width:1920px;height:auto;overflow:visible}
   .slide{position:relative;opacity:1;visibility:visible;width:1920px;height:1080px;page-break-after:always;break-after:page}
   .slide [data-in]{opacity:1;transform:none}
   .rodape,.contador,.ajuda{display:none}
