@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vita Vistorias · Apresentação institucional</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Apresentação institucional da Vita Vistorias, vistoria de entrada e saída para imobiliárias.">
+<link rel="icon" href="../img/logo-vistorias.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../deck.css">
+<style>
+:root{--verde:#008D44;--verde2:#2FBF71;--verdeEsc:#00532A;--tinta:#13202B;--papel:#F1F4F2;--cinza:#5D6B66;--cor:var(--verde);--moldura:#0b100e}
+.titulo{font:900 100px/1.02 Montserrat,Arial,sans-serif;letter-spacing:-.025em}
+.escuro{background:var(--tinta);color:#fff}
+.claro{background:var(--papel);color:var(--tinta)}
+.verde{background:var(--verde);color:#fff}
+.rot{font:800 22px/1.2 Montserrat,Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--verde)}
+.risco{display:block;width:120px;height:8px;border-radius:4px;background:var(--verde);margin:30px 0}
+.marca{position:absolute;display:flex;align-items:center;gap:18px;z-index:3}
+.marca img{width:118px;height:auto}
+.marca b{font:900 34px/1.05 Montserrat,Arial,sans-serif;color:var(--tinta)}
+.marca b span{display:block;color:var(--verde)}
+
+/* 1 capa */
+.capa{background:#fff}
+.capa .foto{right:0;top:0;bottom:0;width:52%;clip-path:polygon(14% 0,100% 0,100% 100%,0 100%)}
+.capa .marca{left:110px;top:90px}
+.capa .bloco{position:absolute;left:110px;top:310px;width:860px}
+.capa h1{font:900 150px/.98 Montserrat,Arial,sans-serif;letter-spacing:-.035em;color:var(--tinta)}
+.capa h1 em{font-style:normal;color:var(--verde)}
+.capa .sub{margin-top:34px;font:600 42px/1.3 Montserrat,Arial,sans-serif;color:#33413b}
+.capa .lema{position:absolute;left:110px;bottom:110px;display:flex;align-items:center;gap:18px;font:800 32px/1 Montserrat,Arial,sans-serif;color:var(--verde)}
+.capa .lema::before{content:'';width:60px;height:6px;border-radius:3px;background:var(--verde)}
+
+/* 2 pergunta */
+.perg .bloco{position:absolute;left:150px;right:150px;top:50%;transform:translateY(-50%)}
+.perg .bloco[data-in]{transform:translateY(calc(-50% + 28px))}
+.slide.on.perg .bloco[data-in]{transform:translateY(-50%)}
+.perg p{font:700 46px/1.3 Montserrat,Arial,sans-serif;color:#d6f5e4}
+.perg h2{margin-top:24px;font:900 150px/1 Montserrat,Arial,sans-serif;letter-spacing:-.03em}
+.perg h2 em{font-style:normal;color:var(--tinta)}
+.perg .casa{position:absolute;right:-80px;bottom:-140px;width:720px;opacity:.12;--casa:#fff;--check:#fff}
+
+/* 3 problema */
+.prob .bloco{position:absolute;left:110px;top:250px;width:820px}
+.prob h2{color:#fff}
+.prob h2 em{font-style:normal;color:var(--verde2)}
+.prob .bloco p{margin-top:36px;font:500 34px/1.45 Montserrat,Arial,sans-serif;color:#b9c6c0}
+.prob ul{position:absolute;right:110px;top:230px;width:800px;display:grid;gap:26px}
+.prob li{display:flex;gap:28px;align-items:flex-start;padding:38px 40px;border-radius:22px;background:rgba(255,255,255,.06);border:2px solid rgba(255,255,255,.08)}
+.prob li b{flex:none;display:grid;place-items:center;width:64px;height:64px;border-radius:50%;background:rgba(255,92,72,.16);color:#ff8a76;font:900 34px/1 Montserrat,Arial,sans-serif}
+.prob li h3{font:800 36px/1.2 Montserrat,Arial,sans-serif}
+.prob li p{margin-top:8px;font:500 26px/1.4 Montserrat,Arial,sans-serif;color:#a9b6b0}
+
+/* 4 resposta */
+.resp .foto{left:0;top:0;bottom:0;width:46%}
+.resp .bloco{position:absolute;left:990px;right:110px;top:150px}
+.resp h2 em{font-style:normal;color:var(--verde)}
+.resp ul{margin-top:56px;display:grid;gap:26px}
+.resp li{display:flex;gap:24px;align-items:baseline;font:600 36px/1.3 Montserrat,Arial,sans-serif;color:#2a3833}
+.resp li::before{content:'✓';flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--verde);color:#fff;font:900 24px/1 Montserrat,Arial,sans-serif;transform:translateY(4px)}
+
+/* 5 como funciona */
+.fluxo h2{position:absolute;left:110px;top:100px}
+.fluxo ol{position:absolute;left:110px;right:110px;top:360px;display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
+.fluxo li{position:relative;padding:46px 38px;border-radius:24px;background:#fff;box-shadow:0 26px 60px -32px rgba(0,40,20,.35);min-height:500px;border-top:10px solid var(--verde)}
+.fluxo li b{display:block;font:900 96px/1 Montserrat,Arial,sans-serif;color:var(--verde);letter-spacing:-.04em}
+.fluxo li h3{margin-top:26px;font:800 42px/1.15 Montserrat,Arial,sans-serif}
+.fluxo li p{margin-top:20px;font:500 28px/1.45 Montserrat,Arial,sans-serif;color:#4b5853}
+
+/* 6 detalhe por detalhe */
+.det .foto{right:0;top:0;bottom:0;width:40%}
+.det .bloco{position:absolute;left:110px;top:90px;width:1050px}
+.det h2{font-size:96px}
+.det h2 em{font-style:normal;color:var(--verde)}
+.det .bloco>p{margin-top:24px;font:600 36px/1.35 Montserrat,Arial,sans-serif;color:#33413b}
+.det .amb{position:absolute;left:110px;top:600px;width:1000px;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.det .amb div{padding:30px 32px;border-radius:20px;background:#fff;box-shadow:0 20px 50px -34px rgba(0,40,20,.4)}
+.det .amb h3{display:flex;align-items:center;gap:14px;font:800 34px/1.1 Montserrat,Arial,sans-serif}
+.det .amb h3::before{content:'';width:16px;height:16px;border-radius:50%;background:var(--verde)}
+.det .amb p{margin-top:10px;font:500 23px/1.4 Montserrat,Arial,sans-serif;color:#5d6b66}
+
+/* 7 laudo */
+.laudo .bloco{position:absolute;left:110px;top:150px;width:780px}
+.laudo h2{color:#fff}
+.laudo h2 em{font-style:normal;color:var(--verde2)}
+.laudo .bloco>p{margin-top:36px;font:500 34px/1.45 Montserrat,Arial,sans-serif;color:#b9c6c0}
+.laudo .papel{position:absolute;right:150px;top:90px;width:760px;height:900px;padding:56px 60px;border-radius:14px;background:#fff;color:var(--tinta);box-shadow:0 60px 120px -30px rgba(0,0,0,.6);transform:rotate(1.5deg)}
+.laudo .papel header{display:flex;justify-content:space-between;align-items:center;padding-bottom:28px;border-bottom:3px solid var(--verde)}
+.laudo .papel header b{font:900 30px/1 Montserrat,Arial,sans-serif;color:var(--verde);letter-spacing:.06em}
+.laudo .papel header span{font:600 20px/1 Montserrat,Arial,sans-serif;color:#8a958f}
+.laudo .papel h3{margin-top:34px;font:800 40px/1.1 Montserrat,Arial,sans-serif}
+.laudo .papel .end{margin-top:10px;font:500 22px/1.4 Montserrat,Arial,sans-serif;color:#6b7772}
+.laudo .itens{margin-top:30px;display:grid;gap:4px}
+.laudo .itens div{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-bottom:2px solid #e6ece9;font:600 26px/1 Montserrat,Arial,sans-serif}
+.laudo .itens i{font:700 20px/1 Montserrat,Arial,sans-serif;font-style:normal;padding:9px 16px;border-radius:20px;background:#dff3e8;color:#0d6b3a}
+.laudo .itens i.obs{background:#fff1d6;color:#8a5a00}
+.laudo .fotos{margin-top:30px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.laudo .fotos span{height:120px;border-radius:10px;background-size:cover;background-position:center}
+.laudo .papel small{position:absolute;left:60px;right:60px;bottom:40px;font:500 18px/1.3 Montserrat,Arial,sans-serif;color:#9aa49f}
+
+/* 8 para quem */
+.quem h2{position:absolute;left:110px;top:100px}
+.quem .cols{position:absolute;left:110px;right:110px;top:340px;display:grid;grid-template-columns:repeat(3,1fr);gap:34px}
+.quem .col{border-radius:24px;overflow:hidden;background:#fff;box-shadow:0 26px 60px -34px rgba(0,40,20,.4)}
+.quem .col span{display:block;height:300px;background-size:cover;background-position:center}
+.quem .col div{padding:36px 40px 44px}
+.quem .col h3{font:900 46px/1.1 Montserrat,Arial,sans-serif;color:var(--verde)}
+.quem .col p{margin-top:16px;font:500 28px/1.45 Montserrat,Arial,sans-serif;color:#3f4c47}
+
+/* 9 contato */
+.fim .foto{right:0;top:0;bottom:0;width:44%}
+.fim .foto::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,var(--verde),rgba(0,141,68,0) 40%)}
+.fim .bloco{position:absolute;left:110px;top:100px;width:1120px}
+.fim .bloco .rot{color:#c9f2db}
+.fim .bloco .risco{background:#fff}
+.fim h2{font:900 108px/1.02 Montserrat,Arial,sans-serif;letter-spacing:-.03em}
+.fim h2 em{font-style:normal;color:var(--tinta)}
+.fim .bloco>p{margin-top:30px;font:600 38px/1.35 Montserrat,Arial,sans-serif;color:#e6fbef}
+.fim .contato{position:absolute;left:110px;bottom:110px;display:flex;align-items:center;gap:46px}
+.fim .contato img{width:230px;height:230px;border-radius:18px;background:#fff;padding:14px}
+.fim .contato b{display:block;font:900 84px/1 Montserrat,Arial,sans-serif;letter-spacing:-.02em}
+.fim .contato span{display:block;margin-top:14px;font:600 30px/1.3 Montserrat,Arial,sans-serif;color:#d6f5e4}
+</style>
+</head>
+<body>
+<div class="deck">
+<div class="palco">
+
+<section class="slide capa" data-nota="Bom dia. Eu sou o Carlos, da Vita Vistorias.|Nós fazemos vistoria de entrada e saída de imóveis para imobiliárias, com padrão e com vistoriador perto do imóvel.|Detalhe por detalhe: é assim que a gente trabalha.">
+  <div class="foto zoom" style="background-image:url(../img/entrega-chaves.jpg);background-position:center"></div>
+  <div class="marca" data-in><img src="../img/logo-vistorias.svg" alt="Logo Vita Vistorias"><b>Vita<span>Vistorias</span></b></div>
+  <div class="bloco"><h1 data-in style="--d:1">Vistoria <em>com padrão.</em></h1><p class="sub" data-in style="--d:2">Vistoria de entrada e saída para imobiliárias.</p></div>
+  <p class="lema" data-in style="--d:3">Detalhe por detalhe.</p>
+</section>
+
+<section class="slide verde perg" data-nota="Começar com a pergunta e deixar a sala pensar um pouco.|A vistoria é o momento em que o cliente decide se confia na imobiliária.">
+  <img class="casa" src="../img/logo-vistorias.svg" alt="">
+  <div class="bloco" data-in><p>Uma pergunta para começar:</p><h2>Como sua imobiliária pode passar <em>mais confiança</em> aos clientes?</h2></div>
+</section>
+
+<section class="slide escuro prob" data-nota="Na entrada, ninguém presta atenção. Na saída, é ali que nasce a discussão.|Sem um registro claro, a imobiliária fica no meio entre proprietário e inquilino.">
+  <div class="bloco"><p class="rot" data-in style="color:var(--verde2)">O problema</p><span class="risco" data-in style="background:var(--verde2)"></span><h2 class="titulo" data-in style="--d:1">A vistoria decide <em>a saída do imóvel.</em></h2><p data-in style="--d:2">Quando o registro é fraco, a discussão fica para a imobiliária resolver.</p></div>
+  <ul>
+    <li data-in style="--d:2"><b>!</b><div><h3>Papel e fotos soltas</h3><p>Cada vistoriador registra de um jeito.</p></div></li>
+    <li data-in style="--d:3"><b>!</b><div><h3>&ldquo;Já estava assim&rdquo;</h3><p>Sem prova clara, a devolução vira discussão.</p></div></li>
+    <li data-in style="--d:4"><b>!</b><div><h3>Espera por um vistoriador</h3><p>Dias para alguém ir até o imóvel.</p></div></li>
+  </ul>
+</section>
+
+<section class="slide claro resp" data-nota="A nossa resposta tem três partes: padrão, proximidade e registro.|Todo laudo segue o mesmo modelo. O vistoriador é quem está mais perto do imóvel. E cada ambiente fica registrado com foto.">
+  <div class="foto zoom" style="background-image:url(../img/registro-celular.jpg);background-position:40% center"></div>
+  <div class="bloco">
+    <p class="rot" data-in>A Vita Vistorias</p><span class="risco" data-in></span>
+    <h2 class="titulo" data-in style="--d:1">Vistoria padronizada, <em>com vistoriador perto do imóvel.</em></h2>
+    <ul><li data-in style="--d:2">O mesmo padrão em toda vistoria</li><li data-in style="--d:3">Vistoriador próximo, menos espera</li><li data-in style="--d:4">Cada ambiente registrado com foto</li></ul>
+  </div>
+</section>
+
+<section class="slide claro fluxo" data-nota="Como funciona, em quatro passos.|A imobiliária pede a vistoria de entrada ou de saída. A solicitação chega ao vistoriador mais próximo. Ele registra ambiente por ambiente. E o laudo sai no padrão da Vita.">
+  <h2 class="titulo" data-in>Como funciona</h2>
+  <ol>
+    <li data-in style="--d:1"><b>01</b><h3>Solicitação</h3><p>A imobiliária pede a vistoria de entrada ou de saída.</p></li>
+    <li data-in style="--d:2"><b>02</b><h3>Vistoriador</h3><p>A solicitação chega a quem está perto do imóvel.</p></li>
+    <li data-in style="--d:3"><b>03</b><h3>Registro</h3><p>Ambiente por ambiente, com fotos e o estado de cada item.</p></li>
+    <li data-in style="--d:4"><b>04</b><h3>Laudo</h3><p>Documento padronizado, pronto para enviar às partes.</p></li>
+  </ol>
+</section>
+
+<section class="slide claro det" data-nota="Aqui está o coração da vistoria: o detalhe.|Cada ambiente é percorrido e cada item recebe foto e condição.|CONFIRMAR COM O CARLOS a lista de ambientes e itens do laudo.">
+  <div class="foto" style="background-image:url(../img/casal-imovel-vazio.jpg);background-position:30% center"></div>
+  <div class="bloco"><p class="rot" data-in>Detalhe por detalhe</p><span class="risco" data-in></span><h2 class="titulo" data-in style="--d:1">A segurança <em>que você merece.</em></h2><p data-in style="--d:2">Cada ambiente percorrido. Cada item com foto e condição.</p></div>
+  <div class="amb">
+    <div data-in style="--d:2"><h3>Sala</h3><p>Paredes, piso, portas e janelas.</p></div>
+    <div data-in style="--d:3"><h3>Quartos</h3><p>Paredes, piso, armários e tomadas.</p></div>
+    <div data-in style="--d:4"><h3>Cozinha</h3><p>Bancada, pia, torneira e azulejos.</p></div>
+    <div data-in style="--d:5"><h3>Banheiros</h3><p>Louças, chuveiro, box e registros.</p></div>
+    <div data-in style="--d:6"><h3>Área de serviço</h3><p>Tanque, ralos e instalações.</p></div>
+    <div data-in style="--d:7"><h3>Áreas externas</h3><p>Garagem, portão e fachada.</p></div>
+  </div>
+</section>
+
+<section class="slide escuro laudo" data-nota="Este é o resultado: o laudo.|Fotos, condição de cada item e observações, sempre no mesmo modelo.|Na saída, basta comparar com a entrada. O documento ao lado é um exemplo.">
+  <div class="bloco"><p class="rot" data-in style="color:var(--verde2)">O resultado</p><span class="risco" data-in style="background:var(--verde2)"></span><h2 class="titulo" data-in style="--d:1">Um laudo <em>que encerra a discussão.</em></h2><p data-in style="--d:2">Na saída, é só comparar com a entrada. O registro fala por si.</p></div>
+  <div class="papel" data-in style="--d:2">
+    <header><b>VITA VISTORIAS</b><span>Laudo de exemplo</span></header>
+    <h3>Vistoria de entrada</h3><p class="end">Rua Exemplo, 100 · Apto 302 · Canoas</p>
+    <div class="itens"><div>Sala · paredes<i>Bom</i></div><div>Sala · piso<i>Bom</i></div><div>Cozinha · bancada<i>Bom</i></div><div>Banheiro · box<i class="obs">Observação</i></div><div>Quarto · janela<i>Bom</i></div></div>
+    <div class="fotos"><span style="background-image:url(../img/casal-imovel-vazio.jpg)"></span><span style="background-image:url(../img/registro-celular.jpg)"></span><span style="background-image:url(../img/depois.jpg)"></span></div>
+    <small>Exemplo ilustrativo do modelo de laudo.</small>
+  </div>
+</section>
+
+<section class="slide claro quem" data-nota="Quem ganha com uma vistoria bem feita: os três lados.|A imobiliária ganha padrão e agilidade. O proprietário tem o imóvel protegido. O inquilino sabe exatamente como recebeu e como vai devolver.">
+  <h2 class="titulo" data-in>Bom para os três lados</h2>
+  <div class="cols">
+    <article class="col" data-in style="--d:1"><span style="background-image:url(../img/corretora-casal.jpg)"></span><div><h3>Imobiliária</h3><p>Padrão em toda vistoria e menos tempo resolvendo discussão.</p></div></article>
+    <article class="col" data-in style="--d:2"><span style="background-image:url(../img/chaves-casal.jpg)"></span><div><h3>Proprietário</h3><p>O imóvel protegido, com o estado de cada item registrado.</p></div></article>
+    <article class="col" data-in style="--d:3"><span style="background-image:url(../img/casal-imovel-vazio.jpg)"></span><div><h3>Inquilino</h3><p>Transparência para saber como recebeu e como vai devolver.</p></div></article>
+  </div>
+</section>
+
+<section class="slide verde fim" data-nota="Para fechar: vamos fazer a primeira vistoria juntos.|Me chamem no WhatsApp ou apontem a câmera para o QR Code.">
+  <div class="foto" style="background-image:url(../img/chaves-casal.jpg);background-position:35% center"></div>
+  <div class="bloco"><p class="rot" data-in>Vamos começar</p><span class="risco" data-in></span><h2 data-in style="--d:1">A próxima vistoria <em>pode ser com a Vita.</em></h2><p data-in style="--d:2">Fale com a gente e agende a primeira.</p></div>
+  <div class="contato" data-in style="--d:3"><img src="../img/qr-whatsapp.png" alt="QR Code do WhatsApp da Vita"><div><b>(51) 99327-7490</b><span>WhatsApp · Canoas e Porto Alegre</span></div></div>
+</section>
+
+<div class="rodape"><i></i></div>
+<p class="contador"></p>
+</div>
+</div>
+<p class="ajuda">Setas ou clique para avançar · F tela cheia · N notas</p>
+<dialog class="notas"><h2></h2><div class="corpo"></div><small>N ou Esc para fechar</small></dialog>
+<script src="../deck.js"></script>
+</body>
+</html>

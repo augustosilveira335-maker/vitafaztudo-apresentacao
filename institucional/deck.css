@@ -1,0 +1,38 @@
+/* Motor das apresentações institucionais da Vita: palco 1920x1080 que se ajusta à tela (TV 16:9). */
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;overflow:hidden;background:var(--moldura,#111)}
+body{font-family:Montserrat,Arial,sans-serif;-webkit-font-smoothing:antialiased;color:var(--tinta,#141414)}
+h1,h2,h3,p,ul,ol,figure{margin:0}
+ul,ol{padding:0;list-style:none}
+img{display:block;max-width:100%}
+.deck{position:fixed;inset:0;display:grid;place-items:center;cursor:pointer}
+.palco{position:relative;width:1920px;height:1080px;flex:none;transform:scale(var(--s,.5));transform-origin:center;overflow:hidden;background:var(--fundo,#fff)}
+.slide{position:absolute;inset:0;overflow:hidden;opacity:0;visibility:hidden;transition:opacity .5s ease,visibility .5s}
+.slide.on{opacity:1;visibility:visible}
+.slide [data-in]{opacity:0;transform:translateY(28px);transition:opacity .6s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1)}
+.slide.on [data-in]{opacity:1;transform:none;transition-delay:calc(var(--d,0) * 110ms + 180ms)}
+.foto{position:absolute;background-size:cover;background-position:center}
+.slide.on .foto.zoom{animation:zoom 9s ease-out both}
+@keyframes zoom{from{transform:scale(1.07)}to{transform:none}}
+.rodape{position:absolute;left:0;right:0;bottom:0;height:6px;background:rgba(0,0,0,.12)}
+.rodape i{display:block;height:100%;width:100%;transform-origin:left;transform:scaleX(0);transition:transform .5s ease;background:var(--cor,#F8630E)}
+.contador{position:absolute;right:44px;bottom:26px;font:600 20px/1 Montserrat,Arial,sans-serif;letter-spacing:.06em;color:var(--contador,rgba(0,0,0,.45));z-index:5;pointer-events:none}
+.palco.escuro .contador{color:rgba(255,255,255,.55)}
+.palco.escuro .rodape{background:rgba(255,255,255,.12)}
+.ajuda{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);padding:10px 16px;border-radius:30px;background:rgba(0,0,0,.72);color:#fff;font:500 14px/1.3 Montserrat,Arial,sans-serif;opacity:0;transition:opacity .4s;pointer-events:none;z-index:20}
+.ajuda.ver{opacity:1}
+dialog.notas{max-width:720px;width:calc(100% - 32px);border:0;border-radius:14px;padding:28px 30px;font:400 19px/1.55 Montserrat,Arial,sans-serif;color:#141414;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+dialog.notas::backdrop{background:rgba(0,0,0,.55)}
+dialog.notas h2{font:800 15px/1.2 Montserrat,Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#777;margin-bottom:12px}
+dialog.notas p+p{margin-top:12px}
+dialog.notas small{display:block;margin-top:18px;color:#888;font-size:14px}
+video{background:#000}
+@media print{
+  @page{size:1920px 1080px;margin:0}
+  html,body{height:auto;overflow:visible;background:#fff}
+  .deck{position:static;display:block}
+  .palco{transform:none;width:1920px;height:auto;overflow:visible}
+  .slide{position:relative;opacity:1;visibility:visible;width:1920px;height:1080px;page-break-after:always;break-after:page}
+  .slide [data-in]{opacity:1;transform:none}
+  .rodape,.contador,.ajuda{display:none}
+}

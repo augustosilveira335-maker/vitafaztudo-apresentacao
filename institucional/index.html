@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vita · Apresentações institucionais</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="img/selo-faz-tudo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@500;600;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--laranja:#F8630E;--verde:#008D44;--tinta:#151515;--papel:#F4F2EE}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:var(--papel);color:var(--tinta);font:500 17px/1.5 Montserrat,Arial,sans-serif;display:flex;flex-direction:column;align-items:center;padding:48px 16px}
+h1{margin:0;font:900 clamp(30px,5vw,48px)/1.1 Montserrat,Arial,sans-serif;letter-spacing:-.02em;text-align:center}
+.sub{margin:12px 0 36px;color:#6c6862;text-align:center}
+.cards{display:grid;gap:22px;width:100%;max-width:980px}
+@media(min-width:760px){.cards{grid-template-columns:1fr 1fr}}
+.card{display:flex;flex-direction:column;border-radius:18px;overflow:hidden;background:#fff;box-shadow:0 24px 50px -30px rgba(0,0,0,.35);text-decoration:none;color:inherit}
+.card .capa{aspect-ratio:16/9;background-size:cover;background-position:center;position:relative}
+.card .capa b{position:absolute;left:22px;bottom:18px;font:400 clamp(30px,4vw,44px)/1 Anton,Impact,sans-serif;text-transform:uppercase;color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.5)}
+.card div.txt{padding:20px 22px 22px;display:flex;flex-direction:column;gap:12px}
+.card p{margin:0;color:#5b5752}
+.acoes{display:flex;flex-wrap:wrap;gap:10px}
+.acoes span,.acoes a{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:30px;font-weight:800;font-size:15px;text-decoration:none}
+.ft .acoes span{background:var(--laranja);color:#fff}.ft .acoes a{border:2px solid var(--laranja);color:var(--laranja)}
+.vi .acoes span{background:var(--verde);color:#fff}.vi .acoes a{border:2px solid var(--verde);color:var(--verde)}
+.ft .capa{background-image:linear-gradient(0deg,rgba(0,0,0,.55),transparent 60%),url(img/capa-tecnico.jpg)}
+.vi .capa{background-image:linear-gradient(0deg,rgba(0,40,20,.6),transparent 60%),url(img/entrega-chaves.jpg)}
+.dica{margin-top:30px;max-width:640px;text-align:center;color:#7a766f;font-size:15px}
+</style>
+</head>
+<body>
+<h1>Apresentações institucionais da Vita</h1>
+<p class="sub">Prévia para revisão · outubro de 2026</p>
+<div class="cards">
+  <div class="card ft"><a href="faz-tudo/" style="text-decoration:none;color:inherit"><div class="capa"><b>Vita Faz Tudo</b></div></a><div class="txt"><p>Gestão de manutenção para imobiliárias. 13 slides.</p><div class="acoes"><a href="faz-tudo/" style="background:var(--laranja);color:#fff;border:0">Apresentar</a><a href="pdf/VITA-FAZ-TUDO-institucional.pdf" download>Baixar PDF</a></div></div></div>
+  <div class="card vi"><a href="vistorias/" style="text-decoration:none;color:inherit"><div class="capa"><b>Vita Vistorias</b></div></a><div class="txt"><p>Vistoria de entrada e saída para imobiliárias. 9 slides.</p><div class="acoes"><a href="vistorias/" style="background:var(--verde);color:#fff;border:0">Apresentar</a><a href="pdf/VITA-VISTORIAS-institucional.pdf" download>Baixar PDF</a></div></div></div>
+</div>
+<p class="dica">Na TV: abra a apresentação, aperte F para tela cheia e use as setas (ou o passador de slides). A tecla N mostra o que falar em cada slide.</p>
+</body>
+</html>

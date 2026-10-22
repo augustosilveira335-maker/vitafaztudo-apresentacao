@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 200" role="img" aria-label="Vita Vistorias">
+  <!-- Redesenho fiel ao selo dos posts (casa verde, check e lupa). Trocar pelo arquivo original quando chegar. -->
+  <path d="M150 52 L104 16 Q100 13 96 16 L26 70 Q22 73 22 78 L22 150 Q22 158 30 158 L150 158" fill="none" stroke="var(--casa,#008D44)" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M74 84 L112 120 L176 50" fill="none" stroke="var(--check,#008D44)" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="186" cy="128" r="15" fill="none" stroke="var(--casa,#008D44)" stroke-width="7"/>
+  <path d="M197 140 L210 153" stroke="var(--casa,#008D44)" stroke-width="8" stroke-linecap="round"/>
+</svg>

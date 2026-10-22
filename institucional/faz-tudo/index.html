@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vita Faz Tudo · Apresentação institucional</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Apresentação institucional da Vita Faz Tudo, gestão de manutenção para imobiliárias.">
+<link rel="icon" href="../img/selo-faz-tudo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../deck.css">
+<style>
+:root{--laranja:#F8630E;--laranja2:#FF8A3D;--tinta:#151515;--grafite:#1E1E1E;--papel:#F6F3EE;--cinza:#6E6A65;--cor:var(--laranja);--moldura:#0d0d0d}
+.titulo{font-family:Anton,Impact,'Arial Narrow',sans-serif;font-weight:400;text-transform:uppercase;line-height:.95;letter-spacing:.005em}
+.escuro{background:var(--grafite);color:#fff}
+.claro{background:var(--papel)}
+.rot{font:700 22px/1.2 Montserrat,Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--laranja)}
+.txt{font:500 34px/1.45 Montserrat,Arial,sans-serif}
+.marca{position:absolute;display:flex;align-items:center;gap:20px;z-index:3}
+.marca img{width:110px;height:110px}
+.marca b{font:800 30px/1.1 Montserrat,Arial,sans-serif}
+.marca b span{color:var(--laranja)}
+.marca small{display:block;font:500 20px/1.3 Montserrat,Arial,sans-serif;opacity:.7}
+.risco{display:block;width:120px;height:8px;background:var(--laranja);margin:34px 0}
+
+/* 1 capa */
+.capa .foto{right:0;top:0;bottom:0;width:58%}
+.capa .foto::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,var(--grafite) 0%,rgba(30,30,30,.55) 22%,rgba(30,30,30,0) 55%)}
+.capa .marca{left:110px;top:90px}
+.capa .bloco{position:absolute;left:110px;top:300px;width:900px;z-index:2}
+.capa h1{font-size:220px;color:#fff}
+.capa h1 em{font-style:normal;color:var(--laranja)}
+.capa .sub{margin-top:30px;font:600 44px/1.25 Montserrat,Arial,sans-serif;max-width:820px}
+.capa .lema{position:absolute;left:110px;bottom:100px;font:700 30px/1.2 Montserrat,Arial,sans-serif;color:var(--laranja2);z-index:2}
+.capa .praca{position:absolute;right:90px;bottom:96px;z-index:2;padding:16px 28px;border-radius:40px;background:var(--laranja);font:700 26px/1 Montserrat,Arial,sans-serif;color:#fff}
+
+/* 2 quem somos */
+.quem .num{position:absolute;left:110px;top:150px;font-family:Anton,Impact,sans-serif;font-size:520px;line-height:.82;color:var(--laranja)}
+.quem .num small{display:block;margin-top:30px;font:800 54px/1.1 Montserrat,Arial,sans-serif;color:var(--tinta);text-transform:none}
+.quem .lado{position:absolute;left:1000px;top:190px;width:800px}
+.quem .lado h2{font-size:96px;color:var(--tinta)}
+.quem .lado .txt{margin-top:10px;color:#3a3734}
+.quem .lado .txt+.txt{margin-top:26px}
+
+/* 3 frase */
+.frase .foto{inset:0}
+.frase .foto::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(18,18,18,.96) 22%,rgba(18,18,18,.62) 70%,rgba(18,18,18,.4))}
+.frase .bloco{position:absolute;left:110px;right:110px;bottom:130px;z-index:2}
+.frase h2{font-size:200px;color:#fff;max-width:1500px}
+.frase p{margin-top:36px;font:700 54px/1.2 Montserrat,Arial,sans-serif;color:var(--laranja)}
+.frase p small{display:block;margin-top:14px;font:500 30px/1.4 Montserrat,Arial,sans-serif;color:#d4d0cb}
+
+/* 4 foco */
+.foco .foto{right:0;top:0;bottom:0;width:44%}
+.foco .bloco{position:absolute;left:110px;top:130px;width:980px}
+.foco h2{font-size:100px;color:var(--tinta)}
+.foco h2 em{font-style:normal;color:var(--laranja)}
+.foco ul{margin-top:60px;display:grid;gap:30px}
+.foco li{display:flex;gap:26px;align-items:baseline;font:600 38px/1.3 Montserrat,Arial,sans-serif;color:#2b2926}
+.foco li i{flex:none;width:18px;height:18px;border-radius:50%;background:var(--laranja);transform:translateY(-4px)}
+
+/* 5 portfólio */
+.port .topo{position:absolute;left:110px;top:90px;right:110px;display:flex;justify-content:space-between;align-items:flex-end}
+.port h2{font-size:130px;color:var(--tinta)}
+.port .topo p{font:500 30px/1.4 Montserrat,Arial,sans-serif;color:var(--cinza);text-align:right;max-width:560px}
+.port .cards{position:absolute;left:110px;right:110px;top:330px;bottom:90px;display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
+.port .card{position:relative;border-radius:22px;overflow:hidden;background:#222}
+.port .card .foto{inset:0}
+.port .card .foto::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(15,15,15,.95) 30%,rgba(15,15,15,.1) 70%)}
+.port .card div{position:absolute;left:34px;right:30px;bottom:34px;z-index:2;color:#fff}
+.port .card h3{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:62px;line-height:1;text-transform:uppercase}
+.port .card h3::before{content:'';display:block;width:56px;height:6px;background:var(--laranja);margin-bottom:20px}
+.port .card p{margin-top:16px;font:500 25px/1.45 Montserrat,Arial,sans-serif;color:#e4e0db}
+
+/* 6 lista */
+.lista .bloco{position:absolute;left:110px;top:110px;width:640px}
+.lista h2{font-size:150px}
+.lista h2 em{font-style:normal;color:var(--laranja)}
+.lista .bloco p{margin-top:40px;font:500 32px/1.45 Montserrat,Arial,sans-serif;color:#cfcac4}
+.lista ol{position:absolute;left:840px;right:110px;top:120px;display:grid;grid-template-columns:1fr 1fr;column-gap:60px}
+.lista li{display:flex;gap:24px;align-items:baseline;padding:24px 0;border-bottom:2px solid rgba(255,255,255,.12);font:600 36px/1.25 Montserrat,Arial,sans-serif}
+.lista li span{flex:none;width:48px;font:700 22px/1 Montserrat,Arial,sans-serif;color:var(--laranja)}
+
+/* 7 como funciona */
+.fluxo h2{position:absolute;left:110px;top:100px;font-size:130px;color:var(--tinta)}
+.fluxo ol{position:absolute;left:110px;right:110px;top:380px;display:grid;grid-template-columns:repeat(4,1fr);gap:34px}
+.fluxo li{position:relative;padding:44px 36px 50px;border-radius:22px;background:#fff;box-shadow:0 24px 60px -30px rgba(0,0,0,.35);min-height:470px}
+.fluxo li b{display:block;font-family:Anton,Impact,sans-serif;font-weight:400;font-size:120px;line-height:1;color:var(--laranja)}
+.fluxo li h3{margin-top:26px;font:800 44px/1.15 Montserrat,Arial,sans-serif;color:var(--tinta)}
+.fluxo li p{margin-top:20px;font:500 28px/1.45 Montserrat,Arial,sans-serif;color:#4a4642}
+.fluxo li:not(:last-child)::after{content:'';position:absolute;top:96px;right:-30px;width:26px;height:26px;border-top:6px solid var(--laranja);border-right:6px solid var(--laranja);transform:rotate(45deg);z-index:2}
+
+/* 8 sistema */
+.sist .bloco{position:absolute;left:110px;top:110px;width:980px}
+.sist h2{font-size:130px}
+.sist h2 em{font-style:normal;color:var(--laranja)}
+.sist .lema2{margin-top:24px;font:600 36px/1.3 Montserrat,Arial,sans-serif;color:#e8e4df}
+.sist ul{margin-top:40px;display:grid;gap:20px}
+.sist li{display:flex;gap:22px;align-items:baseline;font:500 32px/1.35 Montserrat,Arial,sans-serif;color:#d9d4ce}
+.sist li::before{content:'';flex:none;width:30px;height:4px;background:var(--laranja);transform:translateY(-8px)}
+.sist .cel{position:absolute;right:240px;top:70px;width:520px;height:940px;padding:16px;border-radius:64px;background:#0b0b0b;box-shadow:0 0 0 3px #3a3a3a,0 50px 90px rgba(0,0,0,.6)}
+.sist .cel video{width:100%;height:100%;object-fit:cover;border-radius:50px}
+.sist .cel small{position:absolute;left:0;right:0;bottom:-46px;text-align:center;font:500 20px/1 Montserrat,Arial,sans-serif;color:#8d8882}
+
+/* 9 link */
+.link{background:var(--laranja);color:#fff}
+.link .bloco{position:absolute;left:110px;top:120px;width:860px}
+.link h2{font-size:150px;color:var(--tinta)}
+.link .bloco p{margin-top:40px;font:600 38px/1.4 Montserrat,Arial,sans-serif}
+.link ol{position:absolute;right:110px;top:150px;width:760px;display:grid;gap:26px}
+.link li{display:flex;gap:30px;align-items:center;padding:34px 40px;border-radius:24px;background:#fff;color:var(--tinta)}
+.link li b{flex:none;display:grid;place-items:center;width:84px;height:84px;border-radius:50%;background:var(--grafite);color:#fff;font:400 44px/1 Anton,Impact,sans-serif}
+.link li h3{font:800 36px/1.2 Montserrat,Arial,sans-serif}
+.link li p{margin-top:6px;font:500 26px/1.4 Montserrat,Arial,sans-serif;color:#57524d}
+
+/* 10 antes e depois */
+.prova h2{position:absolute;left:110px;top:90px;font-size:110px;color:var(--tinta)}
+.prova h2 em{font-style:normal;color:var(--laranja)}
+.prova .pares{position:absolute;left:110px;top:340px;width:1130px;bottom:110px;display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.prova figure{position:relative;border-radius:22px;overflow:hidden}
+.prova figure img{width:100%;height:100%;object-fit:cover}
+.prova figcaption{position:absolute;left:24px;top:24px;padding:12px 22px;border-radius:30px;background:var(--grafite);color:#fff;font:700 24px/1 Montserrat,Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase}
+.prova figure+figure figcaption{background:var(--laranja)}
+.prova .lado{position:absolute;left:1310px;right:110px;top:360px}
+.prova .lado li{padding:28px 0;border-bottom:2px solid rgba(0,0,0,.1);font:700 36px/1.25 Montserrat,Arial,sans-serif;color:var(--tinta)}
+.prova .lado li span{display:block;margin-top:8px;font:500 24px/1.4 Montserrat,Arial,sans-serif;color:var(--cinza)}
+.prova .aviso{position:absolute;left:110px;bottom:56px;font:500 20px/1 Montserrat,Arial,sans-serif;color:#8a857f}
+
+/* 11 números */
+.nums .rot{position:absolute;left:110px;top:120px}
+.nums h2{position:absolute;left:110px;top:180px;font-size:120px}
+.nums .linha{position:absolute;left:110px;right:110px;top:420px;display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+.nums .linha div{border-top:6px solid var(--laranja);padding-top:30px}
+.nums .linha b{display:block;font-family:Anton,Impact,sans-serif;font-weight:400;font-size:300px;line-height:.9;color:#fff;font-variant-numeric:tabular-nums}
+.nums .linha span{display:block;margin-top:18px;font:700 44px/1.1 Montserrat,Arial,sans-serif;color:var(--laranja2)}
+.nums .fonte{position:absolute;left:110px;bottom:90px;font:500 26px/1.4 Montserrat,Arial,sans-serif;color:#a9a39c}
+
+/* 12 clientes */
+.cli h2{position:absolute;left:110px;top:110px;font-size:130px;color:var(--tinta)}
+.cli .sub{position:absolute;left:110px;top:290px;font:500 34px/1.4 Montserrat,Arial,sans-serif;color:var(--cinza)}
+.cli ul{position:absolute;left:110px;right:110px;top:450px;display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
+.cli li{height:330px;border-radius:24px;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;padding:40px;box-shadow:0 24px 60px -34px rgba(0,0,0,.35)}
+.cli li img{max-width:100%;max-height:170px;object-fit:contain}
+.cli li span{font:600 24px/1.2 Montserrat,Arial,sans-serif;color:var(--cinza)}
+.cli li.nome strong{font:800 52px/1.05 Montserrat,Arial,sans-serif;color:#2c4a6b;text-align:center}
+
+/* 13 oferta e contato */
+.fim .foto{right:0;top:0;bottom:0;width:42%}
+.fim .foto::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,var(--grafite),rgba(30,30,30,0) 45%)}
+.fim .bloco{position:absolute;left:110px;top:100px;width:1180px;z-index:2}
+.fim h2{font-size:132px}
+.fim h2 em{font-style:normal;color:var(--laranja)}
+.fim .of{margin-top:30px;font:600 40px/1.35 Montserrat,Arial,sans-serif;color:#e8e4df}
+.fim .contato{position:absolute;left:110px;bottom:100px;display:flex;align-items:center;gap:50px;z-index:2}
+.fim .contato img{width:230px;height:230px;border-radius:18px;background:#fff;padding:14px}
+.fim .contato b{display:block;font:400 92px/1 Anton,Impact,sans-serif;letter-spacing:.01em}
+.fim .contato span{display:block;margin-top:14px;font:600 30px/1.3 Montserrat,Arial,sans-serif;color:var(--laranja2)}
+.fim .selo{position:absolute;right:110px;bottom:100px;width:200px;z-index:2}
+</style>
+</head>
+<body>
+<div class="deck">
+<div class="palco">
+
+<section class="slide escuro capa" data-nota="Bom dia. Eu sou o Carlos, da Vita Faz Tudo.|Nós cuidamos da manutenção dos imóveis das imobiliárias de Canoas e Porto Alegre: do chamado ao relatório final.|Nos próximos minutos eu mostro quem somos, o que fazemos e como trabalhamos com vocês.">
+  <div class="foto zoom" style="background-image:url(../img/capa-tecnico.jpg);background-position:62% 30%"></div>
+  <div class="marca" data-in><img src="../img/selo-faz-tudo.png" alt="Selo Vita Faz Tudo"><div><b>Vita <span>FAZ TUDO</span></b><small>Gestão de manutenção</small></div></div>
+  <div class="bloco"><h1 class="titulo" data-in style="--d:1">Vita<br><em>Faz Tudo</em></h1><p class="sub" data-in style="--d:2">Gestão de manutenção para imobiliárias.</p></div>
+  <p class="lema" data-in style="--d:3">Chama quem faz. E faz direito.</p>
+  <span class="praca" data-in style="--d:4">Canoas · Porto Alegre</span>
+</section>
+
+<section class="slide claro quem" data-nota="CONFIRMAR COM O CARLOS: ano de fundação e história. Os 15 anos vêm dos posts da própria Vita (&quot;Mais de 15 anos de experiência&quot;).|Contar como a empresa começou e por que decidiu atender imobiliárias.|Frase de apoio: quem faz o serviço é quem entende do serviço.">
+  <p class="num" data-in>+15<small>anos de experiência<br>em manutenção</small></p>
+  <div class="lado">
+    <p class="rot" data-in style="--d:1">Quem somos</p>
+    <span class="risco" data-in style="--d:1"></span>
+    <h2 class="titulo" data-in style="--d:2">Mestre das pequenas obras.</h2>
+    <p class="txt" data-in style="--d:3">Reparos, manutenção e instalações em casas, apartamentos e salas comerciais.</p>
+    <p class="txt" data-in style="--d:4">Hoje somos o braço de manutenção das imobiliárias: um só contato, do problema ao relatório.</p>
+  </div>
+</section>
+
+<section class="slide escuro frase" data-nota="Pergunta para a sala: quantas vezes o prestador sumiu no meio do serviço?|A imobiliária fica entre o inquilino que reclama e o proprietário que cobra.|A Vita existe para tirar esse peso de vocês.">
+  <div class="foto zoom" style="background-image:url(../img/pintura.jpg);background-position:center 30%"></div>
+  <div class="bloco"><h2 class="titulo" data-in>Cansou de gente que não resolve?</h2><p data-in style="--d:2">Chama quem faz. E faz direito.<small>Inquilino ligando, proprietário cobrando, prestador que some. Esse problema tem solução.</small></p></div>
+</section>
+
+<section class="slide claro foco" data-nota="Nosso foco é a imobiliária. Vocês cuidam dos imóveis e dos clientes, nós cuidamos da manutenção.|Um contato só para qualquer reparo, orçamento antes de começar e relatório com foto no final.">
+  <div class="foto" style="background-image:url(../img/tecnico-ferramentas.jpg);background-position:45% center"></div>
+  <div class="bloco">
+    <p class="rot" data-in>Nosso foco</p><span class="risco" data-in></span>
+    <h2 class="titulo" data-in style="--d:1">Sua equipe administra imóveis.<br><em>A Vita administra a manutenção.</em></h2>
+    <ul><li data-in style="--d:2"><i></i>Um só contato para todo tipo de reparo</li><li data-in style="--d:3"><i></i>Orçamento antes, serviço depois</li><li data-in style="--d:4"><i></i>Relatório com foto ao final de cada serviço</li></ul>
+  </div>
+</section>
+
+<section class="slide claro port" data-nota="Estas são as quatro frentes que mais aparecem no dia a dia das imobiliárias.|Exemplos reais do que atendemos: vazamento, disjuntor, persiana arrebentada, calha furada, porta arrastando, pintura de entrega.">
+  <div class="topo"><h2 class="titulo" data-in>O que fazemos</h2><p data-in style="--d:1">Profissionais por especialidade, com a gestão da Vita do início ao fim.</p></div>
+  <div class="cards">
+    <article class="card" data-in style="--d:1"><div class="foto" style="background-image:url(../img/hidraulica.jpg);background-position:40% center"></div><div><h3>Hidráulica</h3><p>Vazamentos, descargas, torneiras, registros e aquecedores.</p></div></article>
+    <article class="card" data-in style="--d:2"><div class="foto" style="background-image:url(../img/eletrica.jpg);background-position:60% center"></div><div><h3>Elétrica</h3><p>Disjuntores, tomadas, iluminação, chuveiros e curtos.</p></div></article>
+    <article class="card" data-in style="--d:3"><div class="foto" style="background-image:url(../img/marcenaria.jpg);background-position:35% center"></div><div><h3>Marcenaria</h3><p>Portas, janelas, armários, persianas e fechaduras.</p></div></article>
+    <article class="card" data-in style="--d:4"><div class="foto" style="background-image:url(../img/pintura.jpg);background-position:70% center"></div><div><h3>Manutenção geral</h3><p>Pintura, telhados, calhas, alvenaria, piso e azulejo.</p></div></article>
+  </div>
+</section>
+
+<section class="slide escuro lista" data-nota="A lista completa. O ponto é: a imobiliária não precisa ter um prestador para cada coisa.|Um chamado só, e a Vita encaminha para o profissional certo.">
+  <div class="bloco"><p class="rot" data-in>Portfólio completo</p><span class="risco" data-in></span><h2 class="titulo" data-in style="--d:1">Um contato.<br><em>Todos os reparos.</em></h2><p data-in style="--d:2">Pare de procurar um prestador para cada problema.</p></div>
+  <ol>
+    <li data-in style="--d:1"><span>01</span>Reparos hidráulicos</li><li data-in style="--d:1"><span>02</span>Reparos elétricos</li>
+    <li data-in style="--d:2"><span>03</span>Marcenaria</li><li data-in style="--d:2"><span>04</span>Pintura</li>
+    <li data-in style="--d:3"><span>05</span>Telhados e calhas</li><li data-in style="--d:3"><span>06</span>Portas e janelas</li>
+    <li data-in style="--d:4"><span>07</span>Piso e azulejos</li><li data-in style="--d:4"><span>08</span>Alvenaria</li>
+    <li data-in style="--d:5"><span>09</span>Serralheria</li><li data-in style="--d:5"><span>10</span>Cercas elétricas e alarmes</li>
+    <li data-in style="--d:6"><span>11</span>Refrigeração</li><li data-in style="--d:6"><span>12</span>Pequenas reformas</li>
+  </ol>
+</section>
+
+<section class="slide claro fluxo" data-nota="Como funciona na prática, em quatro passos.|O chamado pode ser aberto pela imobiliária ou pelo próprio inquilino, pelo link.|Nada é executado sem a aprovação da imobiliária. E todo serviço fecha com relatório.">
+  <h2 class="titulo" data-in>Como funciona</h2>
+  <ol>
+    <li data-in style="--d:1"><b>01</b><h3>Chamado aberto</h3><p>Pela imobiliária ou pelo inquilino, com foto do problema.</p></li>
+    <li data-in style="--d:2"><b>02</b><h3>Orçamento</h3><p>O profissional avalia e a Vita envia o valor.</p></li>
+    <li data-in style="--d:3"><b>03</b><h3>Aprovação</h3><p>Nada é feito sem o ok da imobiliária.</p></li>
+    <li data-in style="--d:4"><b>04</b><h3>Relatório</h3><p>Fotos de antes e depois, data e valor.</p></li>
+  </ol>
+</section>
+
+<section class="slide escuro sist" data-nota="Além do serviço, a imobiliária tem um sistema próprio para acompanhar tudo.|Cada OS mostra em que etapa está. O histórico de cada imóvel fica guardado.|Este vídeo mostra um chamado do começo ao fim.">
+  <div class="bloco">
+    <p class="rot" data-in>Tecnologia a favor da imobiliária</p><span class="risco" data-in></span>
+    <h2 class="titulo" data-in style="--d:1">Menos WhatsApp.<br><em>Mais controle.</em></h2>
+    <p class="lema2" data-in style="--d:2">Tudo sob controle. Sua imobiliária na palma da mão.</p>
+    <ul><li data-in style="--d:3">Cada OS com a etapa à vista, em tempo real</li><li data-in style="--d:4">Histórico de cada imóvel: o que foi feito, quando e quanto</li><li data-in style="--d:5">Avisos por e-mail a cada mudança</li></ul>
+  </div>
+  <div class="cel" data-in style="--d:2"><video src="../video/em-acao.mp4" poster="../img/em-acao-poster.jpg" muted loop playsinline preload="metadata" data-auto></video><small>Vita Faz Tudo em ação</small></div>
+</section>
+
+<section class="slide link escuro" data-nota="Esta é a novidade que as imobiliárias mais gostam.|A imobiliária gera um link no painel dela e manda para o inquilino. O inquilino abre o chamado sozinho, sem login.|O chamado cai direto na conta da imobiliária, com aviso.">
+  <div class="bloco"><p class="rot" data-in style="color:#fff">Novidade</p><span class="risco" data-in style="background:#fff"></span><h2 class="titulo" data-in style="--d:1">O inquilino abre o chamado sozinho.</h2><p data-in style="--d:2">Sem ligação, sem conversa solta. A imobiliária só acompanha.</p></div>
+  <ol>
+    <li data-in style="--d:2"><b>1</b><div><h3>A imobiliária manda o link</h3><p>Ou o QR Code, gerado no painel dela.</p></div></li>
+    <li data-in style="--d:3"><b>2</b><div><h3>O inquilino descreve o problema</h3><p>Pelo celular, sem login e sem instalar nada.</p></div></li>
+    <li data-in style="--d:4"><b>3</b><div><h3>A OS cai na conta da imobiliária</h3><p>Com aviso para a imobiliária e para a Vita.</p></div></li>
+  </ol>
+</section>
+
+<section class="slide claro prova" data-nota="Todo serviço termina com prova: foto de antes, foto de depois, data e valor.|Isso protege a imobiliária com o proprietário e com o inquilino. Se alguém disser que já estava assim, o registro está lá.|As fotos deste slide são ilustrativas.">
+  <h2 class="titulo" data-in>Todo serviço termina<br><em>com prova.</em></h2>
+  <div class="pares"><figure data-in style="--d:1"><img src="../img/antes.jpg" alt="Antes do serviço, imagem ilustrativa"><figcaption>Antes</figcaption></figure><figure data-in style="--d:2"><img src="../img/depois.jpg" alt="Depois do serviço, imagem ilustrativa"><figcaption>Depois</figcaption></figure></div>
+  <ul class="lado"><li data-in style="--d:2">Foto e data<span>Do problema e do serviço pronto.</span></li><li data-in style="--d:3">Valor registrado<span>Prestação de contas para o proprietário.</span></li><li data-in style="--d:4">Histórico do imóvel<span>Tudo o que já foi feito, num lugar só.</span></li></ul>
+  <p class="aviso">Imagens ilustrativas.</p>
+</section>
+
+<section class="slide escuro nums" data-nota="Estes números saem do nosso sistema, não são estimativa.|De maio até agora: 61 chamados, em 53 imóveis diferentes, de 4 imobiliárias.">
+  <p class="rot" data-in>Em números</p>
+  <h2 class="titulo" data-in style="--d:1">O que já passou pela Vita.</h2>
+  <div class="linha">
+    <div data-in style="--d:2"><b data-conta="61">61</b><span>chamados</span></div>
+    <div data-in style="--d:3"><b data-conta="53">53</b><span>imóveis</span></div>
+    <div data-in style="--d:4"><b data-conta="4">4</b><span>imobiliárias</span></div>
+  </div>
+  <p class="fonte" data-in style="--d:5">Registrados no sistema da Vita Faz Tudo, de maio a outubro de 2026.</p>
+</section>
+
+<section class="slide claro cli" data-nota="Estas são as imobiliárias que já trabalham com a gente.|CONFIRMAR COM O CARLOS se pode mostrar nome e logo de cada uma.">
+  <h2 class="titulo" data-in>Quem já trabalha com a gente</h2>
+  <p class="sub" data-in style="--d:1">Imobiliárias de Canoas e região que abrem os chamados delas pela Vita.</p>
+  <ul>
+    <li data-in style="--d:2"><img src="../img/gestao.png" alt="Logo da Imobiliária Gestão"><span>Imobiliária Gestão</span></li>
+    <li data-in style="--d:3"><img src="../img/alpha-invest.png" alt="Logo da Alpha Invest"><span>Alpha Invest</span></li>
+    <li data-in style="--d:4"><img src="../img/uniclass.png" alt="Logo da Uniclass Imóveis"><span>Uniclass Imóveis</span></li>
+    <li class="nome" data-in style="--d:5"><strong>Moinhos<br>Imóveis</strong><span>Moinhos Imóveis</span></li>
+  </ul>
+</section>
+
+<section class="slide escuro fim" data-nota="Para começar, a proposta é simples: um caso real.|No primeiro chamado, a mão de obra é por nossa conta, até R$ 200.|Me chamem no WhatsApp ou apontem a câmera para o QR Code.">
+  <div class="foto" style="background-image:url(../img/hidraulica.jpg);background-position:35% center"></div>
+  <div class="bloco"><p class="rot" data-in>Para começar</p><span class="risco" data-in></span><h2 class="titulo" data-in style="--d:1">Sua primeira OS<br><em>é por nossa conta.</em></h2><p class="of" data-in style="--d:2">No primeiro chamado, a mão de obra é nossa, até R$&nbsp;200.</p></div>
+  <div class="contato" data-in style="--d:3"><img src="../img/qr-whatsapp.png" alt="QR Code do WhatsApp da Vita"><div><b>(51) 99327-7490</b><span>WhatsApp · Canoas e Porto Alegre</span></div></div>
+  <img class="selo" src="../img/selo-faz-tudo.png" alt="" data-in style="--d:4">
+</section>
+
+<div class="rodape"><i></i></div>
+<p class="contador"></p>
+</div>
+</div>
+<p class="ajuda">Setas ou clique para avançar · F tela cheia · N notas</p>
+<dialog class="notas"><h2></h2><div class="corpo"></div><small>N ou Esc para fechar</small></dialog>
+<script src="../deck.js"></script>
+</body>
+</html>
